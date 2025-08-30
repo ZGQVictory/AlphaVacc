@@ -1,5 +1,7 @@
 # AlphaVacc
 
+[![DOI](https://zenodo.org/badge/979973636.svg)](https://doi.org/10.5281/zenodo.17004419)
+
 A Monte Carlo Tree Search (MCTS)–driven deep learning framework for tumor immunotherapy vaccine design. AlphaVacc intelligently mutates antigen peptide sequences—taking into account patient‑specific or randomized starting peptides and HLA alleles—to build an expanded library of high‑immunogenicity vaccine candidates.
 
 ---
