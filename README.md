@@ -47,7 +47,7 @@ Deep Reinforcement learning framework for tumor immunotherapy vaccine design. Al
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/yourusername/AlphaVacc.git
+   git clone https://github.com/ZGQVictory/AlphaVacc.git
    cd AlphaVacc
    ```
 
