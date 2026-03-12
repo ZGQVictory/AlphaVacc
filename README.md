@@ -1,10 +1,13 @@
 # AlphaVacc
 
-Deep Reinforcement learning framework for tumor immunotherapy vaccine design. AlphaVacc intelligently mutates antigen peptide sequences—taking into account patient‑specific or randomized starting peptides and HLA alleles—to build an expanded library of high‑immunogenicity vaccine candidates.
+
+AlphaVacc redefines HLA-presented peptide vaccine candidate design as an iterative sequence-search problem. It integrates self-guided reinforcement learning, interpretable mutation optimization, and experimental validation to optimize and generate peptide sequences from patient-specific or randomized starting peptides under selected HLA alleles. By intelligently exploring sequence space, AlphaVacc enables the construction of expanded libraries of high-potential peptide vaccine candidates for cancer immunotherapy research.
 
 [![DOI](https://zenodo.org/badge/979973636.svg)](https://doi.org/10.5281/zenodo.17004419)
 
 🌐 **Project Website:** [Visit the AlphaVacc web server](http://iqb.zju.edu.cn/servers/alphavacc)
+
+![AlphaVacc overview](alphavacc-fig.png)
 
 ---
 
