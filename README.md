@@ -151,7 +151,7 @@ python predict.py <checkpoint_filename>
 Example:
 
 ```bash
-python predict.py checkpoint_11.pth.tar
+python predict.py checkpoint_70.pth.tar
 ```
 
 This script:
