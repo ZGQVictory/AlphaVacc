@@ -45,6 +45,7 @@ AlphaVacc redefines HLA-presented peptide vaccine candidate design as an iterati
 * `coloredlogs`
 * Other dependencies: see `environment.yml` 
 
+Tested on Ubuntu 20.04 (x86_64) with Python 3.10.
 ---
 
 ## Installation
