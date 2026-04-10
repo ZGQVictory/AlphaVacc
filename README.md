@@ -144,9 +144,9 @@ You can modify hyperparameters directly in `main.py`’s `args`, or extend it to
 
 ---
 
-### Prediction (Peptide Generation)
+### Generation (Peptide Generation)
 
-Using 'predict.py' script. Replace "\<peptide\>" in the script to be the starting peptide.
+Using 'predict.py' script. Replace "\<peptide\>" in the script to be the starting peptide sequence.
 
 ```bash
 python predict.py <checkpoint_filename>
