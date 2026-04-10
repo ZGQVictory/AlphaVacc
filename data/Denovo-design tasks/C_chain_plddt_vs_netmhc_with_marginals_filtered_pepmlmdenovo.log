@@ -1,0 +1,75 @@
+2025-12-07 15:16:09 | INFO | === 开始绘制：筛选 + 散点 + 边际柱状图 ===
+2025-12-07 15:16:09 | INFO | 筛选后数据点: 79/100 (79.00%)  [条件：pLDDT 90–100 且 nM 0–10]
+2025-12-07 15:16:09 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_with_marginals_filtered_pepmlmdenovo.png
+2025-12-07 15:16:09 | INFO | 日志文件: C_chain_plddt_vs_netmhc_with_marginals_filtered_pepmlmdenovo.log
+2025-12-07 15:16:09 | INFO | === 完成 ===
+2025-12-07 15:16:54 | INFO | === 开始绘制：筛选 + 散点 + 边际柱状图 ===
+2025-12-07 15:16:54 | INFO | 筛选后数据点: 79/100 (79.00%)  [条件：pLDDT 90–100 且 nM 0–10]
+2025-12-07 15:16:55 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_with_marginals_filtered_pepmlmdenovo.png
+2025-12-07 15:16:55 | INFO | 日志文件: C_chain_plddt_vs_netmhc_with_marginals_filtered_pepmlmdenovo.log
+2025-12-07 15:16:55 | INFO | === 完成 ===
+2025-12-07 15:17:54 | INFO | === 开始绘制：筛选 + 散点 + 边际柱状图 ===
+2025-12-07 15:17:54 | INFO | 筛选后数据点: 79/100 (79.00%)  [条件：pLDDT 90–100 且 nM 0–10]
+2025-12-07 15:17:54 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_with_marginals_filtered_pepmlmdenovo.png
+2025-12-07 15:17:54 | INFO | 日志文件: C_chain_plddt_vs_netmhc_with_marginals_filtered_pepmlmdenovo.log
+2025-12-07 15:17:54 | INFO | === 完成 ===
+2025-12-07 15:25:28 | INFO | === 开始绘制：筛选 + 散点 + 边际柱状图 ===
+2025-12-07 15:25:28 | INFO | 筛选后数据点: 79/100 (79.00%)  [条件：pLDDT 90–100 且 nM 0–10]
+2025-12-07 15:25:28 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_with_marginals_filtered_pepmlmdenovo.png
+2025-12-07 15:25:28 | INFO | 
+============================================================
+阈值范围内数据点统计信息 (n=79):
+============================================================
+c_chain_atom_plddts_mean (横轴 X):
+  - 平均值: 94.3027
+  - 标准差: 1.6021
+  - 标准误差: 0.1802
+
+netmhc_nM (纵轴 Y):
+  - 平均值: 5.9899
+  - 标准差: 1.7650
+  - 标准误差: 0.1986
+============================================================
+
+2025-12-07 15:25:28 | INFO | 日志文件: C_chain_plddt_vs_netmhc_with_marginals_filtered_pepmlmdenovo.log
+2025-12-07 15:25:28 | INFO | === 完成 ===
+2025-12-18 10:02:49 | INFO | === 开始绘制：筛选 + 散点 + 边际柱状图 ===
+2025-12-18 10:02:49 | INFO | 筛选后数据点: 79/100 (79.00%)  [条件：pLDDT 90–100 且 nM 0–10]
+2025-12-18 10:02:50 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_with_marginals_filtered_pepmlmdenovo_new.png
+2025-12-18 10:02:50 | INFO | 
+============================================================
+阈值范围内数据点统计信息 (n=79):
+============================================================
+c_chain_atom_plddts_mean (横轴 X):
+  - 平均值: 94.3027
+  - 标准差: 1.6021
+  - 标准误差: 0.1802
+
+netmhc_nM (纵轴 Y):
+  - 平均值: 5.9899
+  - 标准差: 1.7650
+  - 标准误差: 0.1986
+============================================================
+
+2025-12-18 10:02:50 | INFO | 日志文件: C_chain_plddt_vs_netmhc_with_marginals_filtered_pepmlmdenovo.log
+2025-12-18 10:02:50 | INFO | === 完成 ===
+2025-12-18 10:22:32 | INFO | === 开始绘制：筛选 + 散点 + 边际柱状图 ===
+2025-12-18 10:22:32 | INFO | 筛选后数据点: 79/100 (79.00%)  [条件：pLDDT 90–100 且 nM 0–10]
+2025-12-18 10:22:33 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_with_marginals_filtered_pepmlmdenovo_new.png
+2025-12-18 10:22:33 | INFO | 
+============================================================
+阈值范围内数据点统计信息 (n=79):
+============================================================
+c_chain_atom_plddts_mean (横轴 X):
+  - 平均值: 94.3027
+  - 标准差: 1.6021
+  - 标准误差: 0.1802
+
+netmhc_nM (纵轴 Y):
+  - 平均值: 5.9899
+  - 标准差: 1.7650
+  - 标准误差: 0.1986
+============================================================
+
+2025-12-18 10:22:33 | INFO | 日志文件: C_chain_plddt_vs_netmhc_with_marginals_filtered_pepmlmdenovo.log
+2025-12-18 10:22:33 | INFO | === 完成 ===

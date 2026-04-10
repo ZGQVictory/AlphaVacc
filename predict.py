@@ -52,7 +52,7 @@ args = dotdict({
     'IEDBtargetdatabase':'IEDB-target-9res.txt',
 
     # predict parameters
-    'optimizationSTEP':50,
+    'optimizationSTEP':1000,
     'MaxIterinONEepisode': 1000, 
     'Use_MCTS': True
 })

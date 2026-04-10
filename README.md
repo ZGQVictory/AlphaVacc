@@ -22,7 +22,7 @@ AlphaVacc redefines HLA-presented peptide vaccine candidate design as an iterati
   - [Configuration](#configuration)
   - [Usage](#usage)
     - [Training (Supervised Fine‑Tuning)](#training-supervised-finetuning)
-    - [Prediction (Peptide Generation)](#prediction-peptide-generation)
+    - [Generation (Peptide Generation)](#generation-peptide-generation)
   - [Argument Reference](#argument-reference)
   - [Logging \& Outputs](#logging--outputs)
   - [License](#license)
@@ -86,6 +86,11 @@ AlphaVacc/
 ├── main.py
 ├── predict.py
 ├── data/
+│   └── AlphaVacc-generated mutation pairs/
+│   └── Denovo-design tasks/
+│   └── Optimization tasks/
+│       └── AlphaVacc optimized peptides/
+│       └── Baseline optimized peptides/
 │   └── IEDB/
 │       └── IEDB-target-9res.txt
 ├── temp/                   # checkpoint directory

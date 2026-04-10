@@ -1,0 +1,30 @@
+2025-10-14 22:20:01 | INFO | === 绘制筛选版散点 + 边际柱状图 ===
+2025-10-14 22:20:01 | ERROR | 未找到输入文件：c_chain_atom_plddts_alphavaccdenovo.csv
+2025-10-14 22:20:17 | INFO | === 绘制筛选版散点 + 边际柱状图 ===
+2025-10-14 22:20:17 | INFO | 筛选后数据点: 97 / 100 (97.00%)
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | Fontsize 0.00 < 1.0 pt not allowed by FreeType. Setting fontsize = 1 pt
+2025-10-14 22:20:17 | INFO | 已生成图像: c_chain_plddt_vs_netmhc_scatter_filtered_marginals_alphavaccMCTSdenovo.png
+2025-10-14 22:20:17 | INFO | === 完成 ===

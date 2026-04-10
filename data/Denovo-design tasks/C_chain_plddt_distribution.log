@@ -1,0 +1,10 @@
+2025-10-14 21:39:18 | INFO | === 开始绘制 C 链 pLDDT 分布图（80–100 区间） ===
+2025-10-14 21:39:18 | INFO | 统计结果: 样本数=6752, 均值=93.989, 方差(σ)=7.750
+2025-10-14 21:39:19 | INFO | 已生成分布图: c_chain_plddt_distribution_pepmlmdenovo.png
+2025-10-14 21:39:19 | INFO | 详细日志写入: C_chain_plddt_distribution.log
+2025-10-14 21:39:19 | INFO | === 绘图完成 ===
+2025-12-07 15:14:51 | INFO | === 开始绘制 C 链 pLDDT 分布图（80–100 区间） ===
+2025-12-07 15:14:51 | INFO | 统计结果: 样本数=6752, 均值=93.989, 方差(σ)=7.750
+2025-12-07 15:14:52 | INFO | 已生成分布图: c_chain_plddt_distribution_pepmlmdenovo.png
+2025-12-07 15:14:52 | INFO | 详细日志写入: C_chain_plddt_distribution.log
+2025-12-07 15:14:52 | INFO | === 绘图完成 ===
