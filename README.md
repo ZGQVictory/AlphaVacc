@@ -125,6 +125,8 @@ See the [Argument Reference](#argument-reference) below for the full list.
 
 ### Training (Supervised Fine‑Tuning)
 
+Using 'main.py' script.
+
 ```bash
 python main.py
 ```
@@ -144,6 +146,8 @@ You can modify hyperparameters directly in `main.py`’s `args`, or extend it to
 
 ### Prediction (Peptide Generation)
 
+Using 'predict.py' script. Replace <peptide> in the script to be the starting peptide.
+
 ```bash
 python predict.py <checkpoint_filename>
 ```
@@ -151,7 +155,10 @@ python predict.py <checkpoint_filename>
 Example:
 
 ```bash
-python predict.py checkpoint_70.pth.tar
+i="CQWGRLWQL"
+cp predict.py predict-$i.py
+sed -i "s/<peptide>/$i/g" predict-$i.py
+python predict-$i.py checkpoint_70.pth.tar
 ```
 
 This script:
