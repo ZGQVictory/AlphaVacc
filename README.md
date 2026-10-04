@@ -231,7 +231,9 @@ Below is a non‑exhaustive list of `args` fields shared by both scripts:
 | `mutation_rate`                | `'3-1'`                               | Mutation rate string                         |
 | `half_life`                    | `500`                                 | Hypothetical half‑life parameter for scoring |
 | `T_init`                       | `20`                                  | Initial temperature for scoring              |
-| `optimizationSTEP` *(predict)* | `50`                                  | Iterations for peptide optimization          |
+| `optimizationSTEP` *(predict)* | `1000`                                | Iterations for peptide optimization when `Use_MCTS=False` |
+| `MaxIterinONEepisode` *(predict)* | `1000`                             | Iterations for peptide optimization when `Use_MCTS=True` |
+| `Use_MCTS` *(predict)*         | `True`                                | Enable MCTS for peptide optimization         |
 
 ---
 

@@ -37,8 +37,7 @@ args = dotdict({
     'predict_directory':"./Predict_data/<peptide>".format(checkpointmodel),     # Directory where the files are located
     'numItersForTrainExamplesHistory': 20,
     
-    
-    'MaxIterinONEepisode': 200,   # zgq added
+
     'playtoend':0.1, # set the threshold for self-play to the end  
     'mutation_rate':'3-1',
     'startpeptide': '<peptide>',
