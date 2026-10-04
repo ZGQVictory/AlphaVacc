@@ -93,10 +93,20 @@ AlphaVacc/
 │       └── Baseline optimized peptides/
 │   └── IEDB/
 │       └── IEDB-target-9res.txt
+│   └── endpoint/
+│       ├── A0201_checkpoint/
+│       ├── B4002_checkpoints/
+│       ├── A0201_training_preparation/
+│       └── B4002_training_preparation/
 ├── temp/                   # checkpoint directory
 ├── Predict_data/           # output directory for predictions
 └── environment.yml 
 ```
+
+`data/endpoint/` provides selected data and model weights for HLA-A*02:01 and HLA-B*40:02 described in the paper:
+
+* `A0201_checkpoint/` and `B4002_checkpoints/` contain the corresponding model weights, training data, soft success peptides, and training hit IEDB peptides.
+* `A0201_training_preparation/` and `B4002_training_preparation/` contain the corresponding IEDB datasets and pretrained weights.
 
 ---
 
@@ -130,7 +140,13 @@ See the [Argument Reference](#argument-reference) below for the full list.
 
 ## Usage
 
+The current setup and default examples target HLA-A*02:01.
+
 ### Training (Supervised Fine‑Tuning)
+
+To train HLA-B*40:02, replace the contents of `data/IEDB/IEDB-target-9res.txt` with `data/endpoint/B4002_training_preparation/B4002_IEDB-target-9res.txt`, and replace `./pretrain_state_dict.0.pkl` with `data/endpoint/B4002_training_preparation/B4002_pretrain_state_dict.0.pkl` (keeping the destination filenames).
+
+For other HLA alleles, download the corresponding IEDB data from [IEDB](https://www.iedb.org/) and obtain pretrained weights by following the pre-train section of [FEPaML](https://github.com/zhongqinglu/FEPaML).
 
 Using 'main.py' script.
 
@@ -159,13 +175,24 @@ Using 'predict.py' script. Replace "\<peptide\>" in the script to be the startin
 python predict.py <checkpoint_filename>
 ```
 
-Example:
+Place the corresponding model checkpoint from `data/endpoint/` in `./temp/` before prediction.
+
+HLA-A*02:01 example:
 
 ```bash
 i="CQWGRLWQL"
 cp predict.py predict-$i.py
 sed -i "s/<peptide>/$i/g" predict-$i.py
-python predict-$i.py checkpoint_70.pth.tar
+python predict-$i.py A0201_checkpoint_70.pth.tar
+```
+
+For HLA-B*40:02, use the matching IEDB data and pretrained weights as described above, then run:
+
+```bash
+i="GERQNATEI"
+cp predict.py predict-$i.py
+sed -i "s/<peptide>/$i/g" predict-$i.py
+python predict-$i.py B4002_checkpoint_87.pth.tar
 ```
 
 This script:
