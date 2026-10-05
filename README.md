@@ -112,16 +112,17 @@ AlphaVacc/
 
 ## Configuration
 
-Both `main.py` and `predict.py` read a `dotdict` named `args` containing hyperparameters and paths. Major fields include:
+Both `main.py` and `predict.py` define a `dotdict` named `args` containing hyperparameters and paths. Some names appear in both scripts but are used only by the training or prediction workflow. Major fields include:
 
 * `pep_length` (int): peptide length (default 9)
 * `res_type` (int): number of residue types (20)
-* **MCTS settings:**
+* **Training and MCTS settings:**
 
-  * `numIters`: total training iterations
-  * `numEps`: self‑play games per iteration
+  * `numIters` (`main.py`): total training iterations
+  * `numEps` (`main.py`): self‑play games per training iteration
   * `numMCTSSims`: MCTS simulations per move
-  * `cpuct`, `tempThreshold`, `updateThreshold`
+  * `MaxIterinONEepisode` (`main.py`): iterations for peptide optimization per self-play episode (default 100)
+  * `cpuct`: PUCT exploration constant
 * **Checkpoint & model loading:**
 
   * `checkpoint` (path)
@@ -130,9 +131,11 @@ Both `main.py` and `predict.py` read a `dotdict` named `args` containing hyperpa
 * **IEDB data:**
 
   * `IEDBdir`, `IEDBtargetdatabase`
-* **Mutation & scoring:**
+* **Mutation, scoring & prediction:**
 
-  * `mutation_rate`, `half_life`, `T_init`
+  * `optimizationSTEP` (`predict.py`): iterations for peptide optimization when `Use_MCTS=False` (default 1000)
+  * `MaxIterinONEepisode` (`predict.py`): iterations for peptide optimization when `Use_MCTS=True` (default 1000)
+  * `Use_MCTS` (`predict.py`): enable MCTS for peptide optimization (default `True`)
 
 See the [Argument Reference](#argument-reference) below for the full list.
 
@@ -160,7 +163,7 @@ This will:
 2. Rotate old record files, create new `Startrecord-YYYYMMDDHHMM.txt` and `Manualrecord-YYYYMMDDHHMM.txt`.
 3. Load IEDB targets.
 4. Instantiate the game (`peptideMutGame`) and neural net (`NNetWrapper`).
-5. Optionally load a checkpoint (`--load_model`).
+5. Optionally load a checkpoint (`load_model`).
 6. Start the learning loop via `Coach.learn()`.
 
 You can modify hyperparameters directly in `main.py`’s `args`, or extend it to accept CLI flags.
@@ -199,41 +202,42 @@ This script:
 
 1. Rotates old update files in `Predict_data/` and creates a new `update-<checkpoint>-<startpeptide>-YYYYMMDDHHMM.txt`.
 2. Loads the trained model checkpoint.
-3. Runs `Search.predict_usingNN(...)` for `optimizationSTEP` iterations.
+3. Runs an MCTS episode limited by `MaxIterinONEepisode` when `Use_MCTS=True`; otherwise runs `Search.predict_usingNN(...)` for `optimizationSTEP` iterations.
 4. Appends each generated peptide sequence to the update file, marking win/loss.
 
 ---
 
 ## Argument Reference
 
-Below is a non‑exhaustive list of `args` fields shared by both scripts:
+The table below covers every field defined in the `args` dictionaries of `main.py` and `predict.py`. “Not defined” means that the field is absent from that script; “unused” means that the script defines it but its active workflow does not read it.
 
-| Argument                       | Default                               | Description                                  |
-| ------------------------------ | ------------------------------------- | -------------------------------------------- |
-| `pep_length`                   | `9`                                   | Length of peptide sequences                  |
-| `res_type`                     | `20`                                  | Number of amino acid types                   |
-| **MCTS**                       |                                       |                                              |
-| `numIters`                     | `100`                                 | Number of training iterations                |
-| `numEps`                       | `200`                                 | Self‑play games per iteration                |
-| `numMCTSSims`                  | `200`                                 | MCTS simulations per move                    |
-| `cpuct`                        | `0.3`                                 | MCTS exploration constant                    |
-| **Thresholds**                 |                                       |                                              |
-| `tempThreshold`                | `15`                                  | Temperature cut‑off for move selection       |
-| `updateThreshold`              | `0.55`                                | Win‑rate threshold for new net acceptance    |
-| **Checkpoint**                 |                                       |                                              |
-| `checkpoint`                   | `'./temp/'`                           | Directory to save/load checkpoints           |
-| `load_model`                   | `False` (`True` in predict.py\`)      | Whether to load existing model               |
-| `load_folder_file`             | `('./temp/','checkpoint_11.pth.tar')` | Tuple of (folder, filename)                  |
-| **IEDB Data**                  |                                       |                                              |
-| `IEDBdir`                      | `'./data/IEDB'`                       | Path to IEDB directory                       |
-| `IEDBtargetdatabase`           | `'IEDB-target-9res.txt'`              | Filename of target peptides                  |
-| **Mutation & Scoring**         |                                       |                                              |
-| `mutation_rate`                | `'3-1'`                               | Mutation rate string                         |
-| `half_life`                    | `500`                                 | Hypothetical half‑life parameter for scoring |
-| `T_init`                       | `20`                                  | Initial temperature for scoring              |
-| `optimizationSTEP` *(predict)* | `1000`                                | Iterations for peptide optimization when `Use_MCTS=False` |
-| `MaxIterinONEepisode` *(predict)* | `1000`                             | Iterations for peptide optimization when `Use_MCTS=True` |
-| `Use_MCTS` *(predict)*         | `True`                                | Enable MCTS for peptide optimization         |
+| Argument                          | `main.py` default                      | `predict.py` default          | Description                                                                                                                                     |
+| --------------------------------- | -------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sequence representation**       |                                        |                               |                                                                                                                                                 |
+| `pep_length`                      | `9`                                    | `9`                           | Length of each peptide sequence.                                                                                                                |
+| `res_type`                        | `20`                                   | `20`                          | Number of amino-acid residue types available at each position.                                                                                  |
+| **Training and MCTS**             |                                        |                               |                                                                                                                                                 |
+| `numIters`                        | `100`                                  | `100` (unused)                | Number of training iterations.                                                                                                                  |
+| `numEps`                          | `200`                                  | `200` (unused)                | Number of self-play episodes generated per training iteration.                                                                                  |
+| `numMCTSSims`                     | `200`                                  | `200`                         | Number of MCTS simulations used to calculate the action probabilities for each move.                                                            |
+| `arenaCompare`                    | `10`                                   | `10` (unused)                 | Number of arena games used to compare the newly trained model with the previous model.                                                          |
+| `cpuct`                           | `0.3`                                  | `0.3`                         | PUCT exploration constant applied to the policy-prior exploration term.                                                                         |
+| `numItersForTrainExamplesHistory` | `20`                                   | `20` (unused)                 | Maximum number of recent training iterations whose self-play examples are retained.                                                             |
+| `MaxIterinONEepisode`             | `100`                                  | `1000`                        | Maximum peptide-optimization steps per self-play episode; in prediction it controls the MCTS path used when `Use_MCTS=True`.                    |
+| `playtoend`                       | `0.1`                                  | `0.1` (unused)                | Fraction of training self-play episodes that ignore neural-network early stopping and continue until an IEDB hit or the episode limit.          |
+| **Checkpoint and output paths**   |                                        |                               |                                                                                                                                                 |
+| `checkpoint`                      | `'./temp/'`                            | `'./temp'` (unused)           | Directory in which training checkpoints and serialized training examples are saved.                                                             |
+| `load_model`                      | `False`                                | `True`                        | Whether to load the model specified by `load_folder_file`; in `main.py`, also load its `.examples` training history.                            |
+| `load_folder_file`                | `('./temp/', 'checkpoint_11.pth.tar')` | `('./temp', checkpointmodel)` | `(directory, filename)` tuple for the checkpoint to load; `checkpointmodel` is the first command-line argument to `predict.py`.                 |
+| `predict_directory`               | Not defined                            | `'./Predict_data/<peptide>'`  | Directory in which prediction output is created; `<peptide>` is replaced in the copied prediction script.                                       |
+| **Peptide initialization**        |                                        |                               |                                                                                                                                                 |
+| `startpeptide`                    | `None`                                 | `'<peptide>'`                 | Starting peptide; `None` generates a random peptide, while prediction replaces the placeholder with the requested sequence.                     |
+| **IEDB data**                     |                                        |                               |                                                                                                                                                 |
+| `IEDBdir`                         | `'./data/IEDB'`                        | `'./data/IEDB'`               | Directory containing the IEDB target-peptide file.                                                                                              |
+| `IEDBtargetdatabase`              | `'IEDB-target-9res.txt'`               | `'IEDB-target-9res.txt'`      | IEDB target filename; its first line is skipped and only nine-residue sequences are loaded.                                                     |
+| **Prediction mode**               |                                        |                               |                                                                                                                                                 |
+| `optimizationSTEP`                | Not defined                            | `1000`                        | Number of peptide-optimization iterations when `Use_MCTS=False`.                                                                                |
+| `Use_MCTS`                        | Not defined                            | `True`                        | Selects MCTS prediction via `Search.executeEpisode()` when true, or direct neural-network prediction via `Search.predict_usingNN()` when false. |
 
 ---
 
